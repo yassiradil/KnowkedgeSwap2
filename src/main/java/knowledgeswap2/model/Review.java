@@ -17,7 +17,7 @@ public class Review implements Serializable, Displayable {
 
     public String getReviewerName() {
         return reviewerName;
-    }
+    } //get cuz its privet
 
     public int getScoreOutOf100() {
         return scoreOutOf100;
@@ -27,14 +27,14 @@ public class Review implements Serializable, Displayable {
         return comment;
     }
 
-    @Override
+    @Override //reuse + shortComment
     public String toDisplayString() {
         String shortComment = comment;
-        if (shortComment.length() > 30) shortComment = shortComment.substring(0, 30) + "...";
-        return reviewerName + " | " + scoreOutOf100 + "/100 | " + shortComment;
+        if (shortComment.length() > 30) shortComment = shortComment.substring(0, 30) + "..."; //first 30 letters
+        return reviewerName + " | " + scoreOutOf100 + "/100 | " + shortComment; //organize
     }
 
-    @Override
+    @Override //reuse M
     public String toString() {
         return toDisplayString();
     }
